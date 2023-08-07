@@ -1,0 +1,29 @@
+{
+  "name": "formandimages",
+  "version": "1.0.0",
+  "description": "The code folder consist of how to handle different types offorms and images ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "Express.js",
+    "Node.js",
+    "Couldinary",
+    "Ejs",
+    "express-fileupload"
+  ],
+  "author": "Jayakumar",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.40.0",
+    "D": "^1.0.0",
+    "ejs": "^3.1.9",
+    "express-fileupload": "^1.4.0",
+    "express.js": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
