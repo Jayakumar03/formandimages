@@ -13,8 +13,8 @@
   </head>
   <body class="bg-dark">
     <div class="container text-white mt-4 col-4 col-offset-6">
-      <h1 class="dislay-3">Get Form</h1>
-      <form method="post" action="/mypost">
+      <h1 class="dislay-3">Post Form</h1>
+      <form method="post" action="/mypost" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
             >FirstName</label
@@ -39,6 +39,16 @@
             name="lastName"
           />
         </div>
+       <div class="mb-3">
+          <label for="SampleFile" class="form-label">ChooseFile</label>
+          <input
+            type="file"
+            class="form-control"
+            id="samplefile"
+            name="sampleFile"
+          />
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>

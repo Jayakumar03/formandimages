@@ -34,6 +34,10 @@ app.use(fileUpload({
 Using the fileUpload Middleware: This line of code tells your Express app to use the fileUpload middleware. The middleware is configured with an options object passed as an argument. In this case, you're setting two options:
 useTempFiles: true: This option indicates that temporary files should be used during the file upload process. Temporary files are useful when dealing with large files to prevent exhausting memory resources.
 tempFileDir: "/tmp/": This option specifies the directory where temporary files will be stored. Temporary files are created while the upload is being processed and are removed after the upload is complete.
+
+If useTempFiles: true, tempFileDir : "/tmp/" are used it wont provide the buffer in binary format example => 10 01 33 12 233
+
+
 */
 
 
@@ -46,13 +50,14 @@ app.get("/myget", (req, res) => {
 
     // USe have use query instaed of body. But this method will not work in react, vue or postman
     res.send(req.query) 
-    console.log(req.query.file)
+    console.log(req.query.files)
 
 })
 
 app.post("/mypost", (req, res) => {
 
     res.send(req.body)
+     console.log(req.files)
 
 })
 
