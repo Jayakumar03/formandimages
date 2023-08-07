@@ -1,4 +1,5 @@
 const express = require("express")
+const fileUpload = require("express-fileupload")
 
 const app = express()
 
@@ -24,11 +25,37 @@ Usage: It's commonly used when data is sent from HTML forms.
 */
 
 
+app.use(fileUpload({
+    useTempFiles: true,
+    tempFileDir : "/tmp/"
+}))
+
+/*
+Using the fileUpload Middleware: This line of code tells your Express app to use the fileUpload middleware. The middleware is configured with an options object passed as an argument. In this case, you're setting two options:
+useTempFiles: true: This option indicates that temporary files should be used during the file upload process. Temporary files are useful when dealing with large files to prevent exhausting memory resources.
+tempFileDir: "/tmp/": This option specifies the directory where temporary files will be stored. Temporary files are created while the upload is being processed and are removed after the upload is complete.
+*/
+
+
+
+// Routes
 app.get("/myget", (req, res) => {
+
+    // res.send(req.body)
+    // won't work if your view engine is from ejs. But it will work for postman and react any other frontend frameworks
+
+    // USe have use query instaed of body. But this method will not work in react, vue or postman
+    res.send(req.query) 
+    console.log(req.query.file)
+
+})
+
+app.post("/mypost", (req, res) => {
 
     res.send(req.body)
 
 })
+
 
 // serving the frontend
 
