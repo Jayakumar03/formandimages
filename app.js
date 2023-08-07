@@ -2,6 +2,9 @@ const express = require("express")
 
 const app = express()
 
+// Default view engine
+app.set("view engine", "ejs");
+
 // Middle ware
 app.use(express.json()) 
 /*
@@ -24,6 +27,22 @@ Usage: It's commonly used when data is sent from HTML forms.
 app.get("/myget", (req, res) => {
 
     res.send(req.body)
+
+})
+
+// serving the frontend
+
+app.get("/mygetform", (req, res) => {
+    // By default when used render it check in views folder. so only provide the html file name as argument
+
+    res.render("getform")
+
+})
+
+app.get("/mypostform", (req, res) => {
+    // By default when used render it check in views folder. so only provide the html file name as argument
+
+    res.render("postform")
 
 })
 
