@@ -15,16 +15,15 @@
     <div class="container text-white mt-4 col-4 col-offset-6">
       <h1 class="dislay-3">Post Form</h1>
       <form method="post" action="/mypost" enctype="multipart/form-data">
+        <!--  -->
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >FirstName</label
-          >
+          <label for="exampleInputEmail1" class="form-label">FirstName</label>
           <input
             type="text"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            name="FirstName"
+            name="firstName"
           />
           <div id="emailHelp" class="form-text">
             We'll never share your email with anyone else.
@@ -39,7 +38,7 @@
             name="lastName"
           />
         </div>
-       <div class="mb-3">
+        <div class="mb-3">
           <label for="SampleFile" class="form-label">ChooseFile</label>
           <input
             type="file"
