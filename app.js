@@ -61,7 +61,7 @@ app.get("/myget", (req, res) => {
 });
 
 // ? logic working. But file uploading is not takening palce due to cloudinary api issue
-app.post("/mypost", async (req, res) => {
+app.post("/mypost", (req, res) => {
   console.log(req.body);
 
   let file = req.files.sampleFile;
